@@ -21,7 +21,6 @@ UNIX Client/Server Program Interface -
 	co¶ w rodzaju superserwera inetd z ma³ymi dodatkami.
 
 %prep
-tar zxf %{SOURCE1}
 
 %setup -q
 echo %{__cc} %{rpmcflags} >conf-cc
@@ -32,6 +31,8 @@ echo /usr >conf-home
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
+tar zxf %{SOURCE1}
 
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir},%{_mandir}/man{1,3,5}}
 
@@ -55,7 +56,9 @@ install	tcprulescheck			$RPM_BUILD_ROOT%{_bindir}
 install	tcpserver			$RPM_BUILD_ROOT%{_bindir}
 install	who@				$RPM_BUILD_ROOT%{_bindir}
 
-install	../%{name}-%{version}-man/*.1		$RPM_BUILD_ROOT%{_mandir}/man1
+pwd
+
+install	./%{name}-%{version}-man/*.1		$RPM_BUILD_ROOT%{_mandir}/man1
 
 gzip -9nf {CHANGES,FILES,README,SYSDEPS,TARGETS,TODO,VERSION}
 
