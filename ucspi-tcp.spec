@@ -2,9 +2,9 @@ Summary:	Transport Control Protocol Superserver
 Summary(pl):	Superserwer Transport Control Protocol
 Name:		ucspi-tcp
 Version:	0.88
-Release:	5
+Release:	5.1
 Group:		Networking/Daemons
-License:	GPL
+License:	DJB http://cr.yp.to/distributors.html
 URL:		http://cr.yp.to/%{name}.html
 Source0:	http://cr.yp.to/%{name}/%{name}-%{version}.tar.gz
 Source1:	ftp://ftp.innominate.org/pub/pape/djb/%{name}-%{version}-man.tar.gz
