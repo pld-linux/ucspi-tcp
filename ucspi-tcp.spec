@@ -5,13 +5,13 @@ Version:	0.88
 Release:	5.1
 Group:		Networking/Daemons
 License:	DJB http://cr.yp.to/distributors.html
-URL:		http://cr.yp.to/%{name}.html
 Source0:	http://cr.yp.to/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	39b619147db54687c4a583a7a94c9163
 Source1:	ftp://ftp.innominate.org/pub/pape/djb/%{name}-%{version}-man.tar.gz
 # Source1-md5:	693be34da89cd5244cef8ae30b4dc6a4
 Patch0:		%{name}-%{version}-mysql.patch.pld
 Patch1:		%{name}-glibc.patch
+URL:		http://cr.yp.to/ucspi-tcp.html
 BuildRequires:	mysql-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -24,7 +24,6 @@ UNIX Client/Server Program Interface - co¶ w rodzaju superserwera
 inetd z ma³ymi dodatkami.
 
 %prep
-
 %setup -q
 %patch0
 %patch1
@@ -60,8 +59,6 @@ install	tcprules			$RPM_BUILD_ROOT%{_bindir}
 install	tcprulescheck			$RPM_BUILD_ROOT%{_bindir}
 install	tcpserver			$RPM_BUILD_ROOT%{_bindir}
 install	who@				$RPM_BUILD_ROOT%{_bindir}
-
-pwd
 
 install	./%{name}-%{version}-man/*.1		$RPM_BUILD_ROOT%{_mandir}/man1
 
