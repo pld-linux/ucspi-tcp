@@ -1,8 +1,12 @@
+#
+# Conditional build:
+%bcond_without	mysql		# build without mysql support
+#
 Summary:	Transport Control Protocol Superserver
 Summary(pl):	Superserwer Transport Control Protocol
 Name:		ucspi-tcp
 Version:	0.88
-Release:	5.1
+Release:	5.2
 Group:		Networking/Daemons
 License:	DJB http://cr.yp.to/distributors.html
 Source0:	http://cr.yp.to/%{name}/%{name}-%{version}.tar.gz
@@ -12,7 +16,7 @@ Source1:	ftp://ftp.innominate.org/pub/pape/djb/%{name}-%{version}-man.tar.gz
 Patch0:		%{name}-%{version}-mysql.patch.pld
 Patch1:		%{name}-glibc.patch
 URL:		http://cr.yp.to/ucspi-tcp.html
-BuildRequires:	mysql-devel
+%{?with_mysql:BuildRequires:	mysql-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,7 +29,7 @@ inetd z ma³ymi dodatkami.
 
 %prep
 %setup -q
-%patch0
+%{?with_mysql:%patch0}
 %patch1
 echo %{__cc} %{rpmcflags} "-I/usr/include/mysql" >conf-cc
 echo /usr >conf-home
