@@ -20,6 +20,7 @@ UNIX Client/Server Program Interface
 %setup -q
 echo gcc $RPM_OPT_FLAGS >conf-cc
 echo /usr >conf-home
+
 %build
 make 
 
@@ -54,17 +55,14 @@ install *.5				$RPM_BUILD_ROOT%{_mandir}/man5
 gzip -9nf {BLURB,CHANGES,README,SYSDEPS,TARGETS,TCP,THANKS,TODO} \
           {UCSPI,VERSION,$RPM_BUILD_ROOT%{_mandir}/man{1,3,5}/*}
 
-%post
-%preun
-%postun
 %clean
 rm -rf $RPM_BUILD_ROOT
+
 %files
 %defattr(644,root,root,755)
-%attr(644,root,root) %{_mandir}/man1/*
-%attr(644,root,root) %{_mandir}/man3/*
-%attr(644,root,root) %{_mandir}/man5/*
+%doc {BLURB,CHANGES,README,SYSDEPS,TARGETS,TCP,THANKS,TODO,UCSPI,VERSION}.gz
+%{_mandir}/man1/*
+%{_mandir}/man3/*
+%{_mandir}/man5/*
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_sbindir}/*
-
-%doc {BLURB,CHANGES,README,SYSDEPS,TARGETS,TCP,THANKS,TODO,UCSPI,VERSION}.gz
