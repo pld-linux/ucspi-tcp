@@ -1,13 +1,14 @@
-Summary:     	Transport Control Protocol Superserver
-Summary(pl): 	Superserwer Transport Control Protocol
-Name:        	ucspi-tcp
-Version:     	0.88
-Release:     	2
-Group:       	Networking/Daemons
-Group(pl):   	Sieciowe/Serwery
-Copyright:   	GPL
-URL:         	http://cr.yp.to/%{name}.html
-Source0:      	http://cr.yp.to/%{name}/%{name}-%{version}.tar.gz
+Summary:	Transport Control Protocol Superserver
+Summary(pl):	Superserwer Transport Control Protocol
+Name:		ucspi-tcp
+Version:	0.88
+Release:	2
+Group:		Networking/Daemons
+Group(de):	Netzwerkwesen/Server
+Group(pl):	Sieciowe/Serwery
+License:	GPL
+URL:		http://cr.yp.to/%{name}.html
+Source0:	http://cr.yp.to/%{name}/%{name}-%{version}.tar.gz
 Source1:	ftp://ftp.innominate.org/pub/pape/djb/%{name}-%{version}-man.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -16,14 +17,14 @@ UNIX Client/Server Program Interface -
 	something like inetd with add-ons.
 
 %description -l pl
-UNIX Client/Server Program Interface - 
+UNIX Client/Server Program Interface -
 	co¶ w rodzaju superserwera inetd z ma³ymi dodatkami.
 
 %prep
 tar zxf %{SOURCE1}
 
 %setup -q
-echo gcc $RPM_OPT_FLAGS >conf-cc
+echo %{__cc} %{rpmcflags} >conf-cc
 echo /usr >conf-home
 
 %build
@@ -56,8 +57,7 @@ install	who@				$RPM_BUILD_ROOT%{_bindir}
 
 install	../%{name}-%{version}-man/*.1		$RPM_BUILD_ROOT%{_mandir}/man1
 
-gzip -9nf {CHANGES,FILES,README,SYSDEPS,TARGETS,TODO,VERSION} \
-		$RPM_BUILD_ROOT%_mandir/man1/*
+gzip -9nf {CHANGES,FILES,README,SYSDEPS,TARGETS,TODO,VERSION}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
