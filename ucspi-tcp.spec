@@ -61,13 +61,11 @@ pwd
 
 install	./%{name}-%{version}-man/*.1		$RPM_BUILD_ROOT%{_mandir}/man1
 
-gzip -9nf {CHANGES,FILES,README,SYSDEPS,TARGETS,TODO,VERSION}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {CHANGES,README,SYSDEPS,TARGETS,TODO,VERSION}.gz
+%doc {CHANGES,README,SYSDEPS,TARGETS,TODO,VERSION}
 %{_mandir}/man1/*
 %attr(755,root,root) %{_bindir}/*
