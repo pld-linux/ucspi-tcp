@@ -8,7 +8,7 @@ Group(pl):   Sieciowe/Serwery
 Copyright:   GPL
 URL:         http://pobox.com/~djb/ucspi-tcp.html
 Source:      %{name}-%{version}.tar.gz
-BuildRoot:   /tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 UNIX Client/Server Program Interface
