@@ -22,7 +22,7 @@ echo gcc $RPM_OPT_FLAGS >conf-cc
 echo /usr >conf-home
 
 %build
-make 
+%{__make} 
 
 %install
 rm -rf $RPM_BUILD_ROOT
