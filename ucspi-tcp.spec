@@ -4,8 +4,6 @@ Name:		ucspi-tcp
 Version:	0.88
 Release:	2
 Group:		Networking/Daemons
-Group(de):	Netzwerkwesen/Server
-Group(pl):	Sieciowe/Serwery
 License:	GPL
 URL:		http://cr.yp.to/%{name}.html
 Source0:	http://cr.yp.to/%{name}/%{name}-%{version}.tar.gz
