@@ -2,12 +2,14 @@ Summary:	Transport Control Protocol Superserver
 Summary(pl):	Superserwer Transport Control Protocol
 Name:		ucspi-tcp
 Version:	0.88
-Release:	2
+Release:	3
 Group:		Networking/Daemons
 License:	GPL
 URL:		http://cr.yp.to/%{name}.html
 Source0:	http://cr.yp.to/%{name}/%{name}-%{version}.tar.gz
 Source1:	ftp://ftp.innominate.org/pub/pape/djb/%{name}-%{version}-man.tar.gz
+Patch0:		http://matt.simerson.net/computing/mail/qmail/ucspi-tcp-0.88-mysql.patch
+BuildRequires:	mysql-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,7 +23,8 @@ inetd z ma³ymi dodatkami.
 %prep
 
 %setup -q
-echo %{__cc} %{rpmcflags} >conf-cc
+%patch0
+echo %{__cc} %{rpmcflags} "-I/usr/include/mysql" >conf-cc
 echo /usr >conf-home
 
 %build
