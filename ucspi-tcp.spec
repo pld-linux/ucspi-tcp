@@ -26,7 +26,7 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{/usr/bin,%{_mandir}/man{1,3,5}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir},%{_mandir}/man{1,3,5}}
 
 install	addcr				$RPM_BUILD_ROOT%{_bindir}
 install	argv0				$RPM_BUILD_ROOT%{_bindir}
@@ -44,7 +44,7 @@ install	tcpcat				$RPM_BUILD_ROOT%{_bindir}
 install	tcpclient			$RPM_BUILD_ROOT%{_bindir}
 install	tcprules			$RPM_BUILD_ROOT%{_bindir}
 install	tcprulescheck			$RPM_BUILD_ROOT%{_bindir}
-install	tcpserver			$RPM_BUILD_ROOT%{_bindir}
+install	tcpserver			$RPM_BUILD_ROOT%{_sbindir}
 install	who@				$RPM_BUILD_ROOT%{_bindir}
 
 install	*.1				$RPM_BUILD_ROOT%{_mandir}/man1
@@ -64,6 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644,root,root) %{_mandir}/man1/*
 %attr(644,root,root) %{_mandir}/man3/*
 %attr(644,root,root) %{_mandir}/man5/*
-%attr(755,root,root) /usr/bin/*
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_sbindir}/*
 
 %doc {BLURB,CHANGES,README,SYSDEPS,TARGETS,TCP,THANKS,TODO,UCSPI,VERSION}.gz
