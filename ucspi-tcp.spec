@@ -11,12 +11,12 @@ Source1:	ftp://ftp.innominate.org/pub/pape/djb/%{name}-%{version}-man.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-UNIX Client/Server Program Interface - 
-	something like inetd with add-ons.
+UNIX Client/Server Program Interface - something like inetd with
+add-ons.
 
 %description -l pl
-UNIX Client/Server Program Interface -
-	co¶ w rodzaju superserwera inetd z ma³ymi dodatkami.
+UNIX Client/Server Program Interface - co¶ w rodzaju superserwera
+inetd z ma³ymi dodatkami.
 
 %prep
 
@@ -25,7 +25,7 @@ echo %{__cc} %{rpmcflags} >conf-cc
 echo /usr >conf-home
 
 %build
-%{__make} 
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
