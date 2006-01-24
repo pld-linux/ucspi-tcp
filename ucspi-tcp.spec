@@ -15,7 +15,7 @@ Source1:	ftp://ftp.innominate.org/pub/pape/djb/%{name}-%{version}-man.tar.gz
 # Source1-md5:	693be34da89cd5244cef8ae30b4dc6a4
 Patch0:		%{name}-%{version}-mysql.patch.pld
 Patch1:		%{name}-glibc.patch
-Patch2:		http://www.lamer.de/maex/creative/software/ucspi-tcp/0.88-recordio/recordio.diff
+Patch2:		http://lamer.maexotic.de/maex/creative/software/ucspi-tcp/0.88-recordio/recordio.diff
 URL:		http://cr.yp.to/ucspi-tcp.html
 %{?with_mysql:BuildRequires:	mysql-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
