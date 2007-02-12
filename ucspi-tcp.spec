@@ -3,7 +3,7 @@
 %bcond_without	mysql		# build without mysql support
 #
 Summary:	Transport Control Protocol Superserver
-Summary(pl):	Superserwer Transport Control Protocol
+Summary(pl.UTF-8):   Superserwer Transport Control Protocol
 Name:		ucspi-tcp
 Version:	0.88
 Release:	6
@@ -24,9 +24,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 UNIX Client/Server Program Interface - something like inetd with
 add-ons.
 
-%description -l pl
-UNIX Client/Server Program Interface - co∂ w rodzaju superserwera
-inetd z ma≥ymi dodatkami.
+%description -l pl.UTF-8
+UNIX Client/Server Program Interface - co≈õ w rodzaju superserwera
+inetd z ma≈Çymi dodatkami.
 
 %prep
 %setup -q
