@@ -3,7 +3,7 @@
 %bcond_without	mysql		# build without mysql support
 #
 Summary:	Transport Control Protocol Superserver
-Summary(pl.UTF-8):   Superserwer Transport Control Protocol
+Summary(pl.UTF-8):	Superserwer Transport Control Protocol
 Name:		ucspi-tcp
 Version:	0.88
 Release:	6
