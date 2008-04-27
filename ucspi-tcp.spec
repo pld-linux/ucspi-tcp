@@ -8,7 +8,8 @@ Name:		ucspi-tcp
 Version:	0.88
 Release:	6
 Group:		Networking/Daemons
-License:	DJB http://cr.yp.to/distributors.html
+# http://cr.yp.to/distributors.html
+License:	Public Domain
 Source0:	http://cr.yp.to/ucspi-tcp/%{name}-%{version}.tar.gz
 # Source0-md5:	39b619147db54687c4a583a7a94c9163
 Source1:	ftp://ftp.innominate.org/pub/pape/djb/%{name}-%{version}-man.tar.gz
