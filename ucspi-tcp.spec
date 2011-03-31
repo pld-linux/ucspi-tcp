@@ -6,7 +6,7 @@ Summary:	Transport Control Protocol Superserver
 Summary(pl.UTF-8):	Superserwer Transport Control Protocol
 Name:		ucspi-tcp
 Version:	0.88
-Release:	8
+Release:	9
 Group:		Networking/Daemons
 # http://cr.yp.to/distributors.html
 License:	Public Domain
